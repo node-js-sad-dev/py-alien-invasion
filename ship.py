@@ -10,7 +10,8 @@ class Ship:
 
         """Загрузить фото корабля в игру"""
         self.image = pygame.transform.scale(pygame.image.load('images/ship.png'), (46, 78))
-        """Получить прямоугольник изображения, чтобы на экране манипулировать изображением как прямоугольником (координатами и тд)"""
+        """Получить прямоугольник изображения, чтобы на экране манипулировать изображением как прямоугольником (
+        координатами и тд) """
         self.rect = self.image.get_rect()
 
         """Разместить нижний центр корабля в точке нижнего центра экрана игры"""
@@ -21,6 +22,10 @@ class Ship:
 
         self.settings = ai_game.settings
 
+        self.x = float(self.rect.x)
+
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
         self.x = float(self.rect.x)
 
     def update(self):
